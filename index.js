@@ -32,7 +32,7 @@ function handleAdd(){
 function handleDouble(){
     const wealth = document.getElementsByClassName("wealth");
     for(let i=0 ; i<wealth.length ; i++){
-        wealth[i].innerHTML = parseInt(wealth[i].innerHTML)*2;
+        wealth[i].innerHTML = `${parseInt(wealth[i].innerHTML)*2}원`;
     }
 }
 
@@ -46,10 +46,26 @@ function handleFilter(){
     }
 }
 
+function handleDescend(){
+    const wealth = document.getElementsByClassName("wealth");
+    const username = document.getElementsByClassName("username");
+    let sortable = [];
+    for(let i=0 ; i<wealth.length ; i++){
+        sortable.push(`${username[i].innerHTML}+${parseInt(wealth[i].innerHTML)}`);
+    }
+    for(let i=0 ; i<wealth.length ; i++){
+        wealth[i].innerHTML = `${sortable.sort(function(a,b){
+            return parseInt(a.split("+")[1])-parseInt(b.split("+")[1]);
+        }).reverse()[i].split("+")[1]}원`
+        username[i].innerHTML = sortable[i].split("+")[0]
+    }
+}
+
 function init(){
     addUserBtn.addEventListener("click", handleAdd);
     doubleBtn.addEventListener("click", handleDouble);
     millionaresBtn.addEventListener("click", handleFilter);
+    descendingBtn.addEventListener("click", handleDescend);
 }
 
 init();
