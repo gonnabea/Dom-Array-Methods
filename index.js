@@ -15,7 +15,7 @@ function handleAdd(){
 "준서","준우","현우","지훈","도현"];
     const randomNum = Math.floor(Math.random()*24);
     const randomNum2 = Math.floor(Math.random()*13);
-    const randomWealth = `${Math.floor(Math.random()*100000000)}원`;
+    const randomWealth = `${(Math.floor(Math.random()*100000000))}원`;
     const firstName = firstNames.split("")[randomNum];
     const lastName = lastNames[randomNum2];
     const fullName = firstName+lastName;
@@ -68,7 +68,7 @@ function handleTotal(){
     for(let i=0 ; i<wealth.length ; i++){
         totalValue+= parseInt(wealth[i].innerHTML);
     }
-    total.innerHTML = `합산: ${totalValue}원`;
+    total.innerHTML = `합산: ${totalValue.toLocaleString('ko-KR')}원`;
 }
 
 function init(){
