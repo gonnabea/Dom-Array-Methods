@@ -22,6 +22,7 @@ function handleAdd(){
     span.innerHTML = fullName;
     div.appendChild(span);
     personArea.appendChild(div);
+    span.className = "username";
     span2.innerHTML = randomWealth;
     span2.className = "wealth";
     div.appendChild(span2);
@@ -35,9 +36,20 @@ function handleDouble(){
     }
 }
 
+function handleFilter(){
+    const wealth = document.getElementsByClassName("wealth");
+    for(let i=0 ; i<wealth.length ; i++){
+        if(parseInt(wealth[i].innerHTML) < 100000000){
+            console.log(wealth[i].parentNode)
+            wealth[i].parentNode.style.display = "none";
+        };
+    }
+}
+
 function init(){
     addUserBtn.addEventListener("click", handleAdd);
     doubleBtn.addEventListener("click", handleDouble);
+    millionaresBtn.addEventListener("click", handleFilter);
 }
 
 init();
