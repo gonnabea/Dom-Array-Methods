@@ -11,12 +11,15 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 
 .title{
     font-weight: 700;
     font-size: 40px;
     margin-bottom: 10%;
+    position: fixed;
+    color:rgba(0,0,0,0.2)
 }
 
 .main-area{
@@ -27,7 +30,7 @@ body{
 .orders{
     display: flex;
     flex-direction: column;
-    border-right: solid 1px black;
+    justify-content: center;
     padding-right: 20px;
 }
 
@@ -41,7 +44,7 @@ body{
     border-radius: 10px;
     outline: none;
     cursor: pointer;
-   
+    position: relative;
 }
 
 .order:hover{
@@ -51,6 +54,11 @@ body{
 
 .person_area{
     width: 300px;
+    height:500px;
+}
+
+.person_info{
+    border-left: solid 1px black;
 }
 
 .person_title{
