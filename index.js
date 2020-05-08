@@ -61,11 +61,22 @@ function handleDescend(){
     }
 }
 
+function handleTotal(){
+    const wealth = document.getElementsByClassName("wealth");
+    const total = document.getElementById("total");
+    let totalValue = 0;
+    for(let i=0 ; i<wealth.length ; i++){
+        totalValue+= parseInt(wealth[i].innerHTML);
+    }
+    total.innerHTML = `합산: ${totalValue}원`;
+}
+
 function init(){
     addUserBtn.addEventListener("click", handleAdd);
     doubleBtn.addEventListener("click", handleDouble);
     millionaresBtn.addEventListener("click", handleFilter);
     descendingBtn.addEventListener("click", handleDescend);
+    totalBtn.addEventListener("click", handleTotal);
 }
 
 init();
