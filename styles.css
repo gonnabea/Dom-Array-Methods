@@ -16,8 +16,7 @@ body{
 .title{
     font-weight: 700;
     font-size: 40px;
-    margin-top: -30%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 
 .main-area{
@@ -52,7 +51,6 @@ body{
 
 .person_area{
     width: 300px;
-    
 }
 
 .person_title{

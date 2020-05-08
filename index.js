@@ -23,12 +23,21 @@ function handleAdd(){
     div.appendChild(span);
     personArea.appendChild(div);
     span2.innerHTML = randomWealth;
+    span2.className = "wealth";
     div.appendChild(span2);
     div.className = "person_info";
 }
 
+function handleDouble(){
+    const wealth = document.getElementsByClassName("wealth");
+    for(let i=0 ; i<wealth.length ; i++){
+        wealth[i].innerHTML = parseInt(wealth[i].innerHTML)*2;
+    }
+}
+
 function init(){
     addUserBtn.addEventListener("click", handleAdd);
+    doubleBtn.addEventListener("click", handleDouble);
 }
 
 init();
