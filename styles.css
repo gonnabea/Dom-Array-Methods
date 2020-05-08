@@ -72,3 +72,9 @@ body{
     display: flex;
     justify-content: space-around;
 }
+
+.total{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
